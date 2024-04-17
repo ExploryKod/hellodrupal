@@ -1,0 +1,5 @@
+name: 'sky'
+type: module
+description: 'sky est un ciel'
+package: sky
+core_version_requirement: ^10 || ^11

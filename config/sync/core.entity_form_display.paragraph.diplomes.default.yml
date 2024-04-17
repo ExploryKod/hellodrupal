@@ -1,0 +1,23 @@
+uuid: fdd208fa-65fe-4a3a-a153-75e02d20f15d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.diplomes.field_date
+    - paragraphs.paragraphs_type.diplomes
+  module:
+    - datetime
+id: paragraph.diplomes.default
+targetEntityType: paragraph
+bundle: diplomes
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

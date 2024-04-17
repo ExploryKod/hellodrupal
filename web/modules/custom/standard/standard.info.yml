@@ -1,0 +1,6 @@
+name: 'Hello'
+type: module
+description: 'Module de test'
+package: modula
+core_version_requirement: ^10 || ^11
+dependencies:

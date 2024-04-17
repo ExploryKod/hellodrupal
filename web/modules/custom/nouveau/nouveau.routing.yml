@@ -1,0 +1,7 @@
+nouveau.example:
+  path: '/nouveau/page'
+  defaults:
+    _title: 'Nouveau'
+    _controller: '\Drupal\nouveau\Controller\NouveauController'
+  requirements:
+    _permission: 'TRUE'

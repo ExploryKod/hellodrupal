@@ -1,0 +1,7 @@
+sky.page:
+  path: '/sky/page'
+  defaults:
+    _title: 'Page'
+    _controller: '\Drupal\sky\Controller\SkyController'
+  requirements:
+    _permission: 'access content overview'

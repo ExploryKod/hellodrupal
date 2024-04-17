@@ -1,0 +1,21 @@
+uuid: d37d85af-496f-44f2-a307-725f924bbaae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date
+    - paragraphs.paragraphs_type.diplomes
+  module:
+    - datetime
+id: paragraph.diplomes.field_date
+field_name: field_date
+entity_type: paragraph
+bundle: diplomes
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

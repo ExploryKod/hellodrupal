@@ -1,0 +1,10 @@
+uuid: de209141-2ed4-49a1-8368-a9d1d804de96
+langcode: en
+status: true
+dependencies: {  }
+id: diplomes
+label: Diplômes
+icon_uuid: null
+icon_default: null
+description: Diplomes
+behavior_plugins: {  }

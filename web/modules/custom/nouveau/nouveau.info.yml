@@ -1,0 +1,5 @@
+name: 'Nouveau'
+type: module
+description: 'la description'
+package: custom
+core_version_requirement: ^10 || ^11

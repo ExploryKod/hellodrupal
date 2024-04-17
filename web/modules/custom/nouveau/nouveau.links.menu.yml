@@ -1,0 +1,4 @@
+nouveau.page:
+  title: 'Nouveau'
+  route_name: nouveau.page
+  menu_name: main
