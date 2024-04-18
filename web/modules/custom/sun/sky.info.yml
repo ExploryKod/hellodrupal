@@ -1,5 +1,5 @@
-name: 'sky'
+name: 'sun'
 type: module
-description: 'sky est un ciel'
-package: sky
+description: 'sun est un ciel'
+package: sun
 core_version_requirement: ^10 || ^11

@@ -1,0 +1,50 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Sun module.
+ */
+function sun_schema() {
+//  NOM DE LA TABLE EST SUN_USER_STATISTICS
+  $schema['sun_user_statistics'] = [
+    'description' => 'Stock les statistiques des utilisateurs.',
+    'fields' => [
+      'id' => [
+        'description' => 'L\'identifiant unique de la statistique.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'description' => 'L\'identifiant de l\'utilisateur associé à la statistique.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'timestamp' => [
+        'description' => 'Le moment où la statistique a été enregistrée.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      // Ajoutez ici d'autres champs spécifiques à vos statistiques.
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}
+/**
+ * Implements hook_install().
+ */
+function sun_install(): void {
+  \Drupal::messenger()->addStatus(t('Module Sun has been installed.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function sun_uninstall(): void {
+  \Drupal::messenger()->addStatus(t('Module Sun has been uninstalled.'));
+}

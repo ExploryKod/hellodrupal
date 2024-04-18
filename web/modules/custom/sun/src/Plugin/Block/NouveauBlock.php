@@ -16,27 +16,18 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides a nouveau bloc block.
  *
  * @Block(
- *   id = "nouveau_nouveau",
+ *   id = "sun_sun",
  *   admin_label = @Translation("Nouveau Bloc"),
  *   category = @Translation("Nouveau"),
  * )
  */
 final class NouveauBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-  /**
-   * @var TimestampFormatter|DateFormatterInterface
-   */
-  protected TimestampFormatter $dateFormatter;
 
   /**
-   * @var TimeInterface
+   * @var \Drupal\Core\Database\Connection
    */
-  protected TimeInterface $datetimeTime;
-
-  /**
-   * @var AccountProxyInterface
-   */
-  protected AccountProxyInterface $currentUser;
+  protected $database;
 
   /**
    * Constructs the plugin instance.
@@ -45,13 +36,10 @@ final class NouveauBlock extends BlockBase implements ContainerFactoryPluginInte
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    $dateFormatter,
-    $datetimeTime,
-    $currentUser,
+    $connexion,
   ) {
-    $this->dateFormatter = $dateFormatter;
-    $this->datetimeTime = $datetimeTime;
-    $this->currentUser = $currentUser;
+    $this->database = $connexion;
+
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
@@ -63,9 +51,7 @@ final class NouveauBlock extends BlockBase implements ContainerFactoryPluginInte
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('date.formatter'),
-      $container->get('datetime.time'),
-      $container->get('current_user'),
+      $container->get('database'),
     );
   }
 
@@ -73,11 +59,12 @@ final class NouveauBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   public function build(): array {
-    $now = $this->datetimeTime->getRequestTime();
-    $date = $this->dateFormatter->format($now, 'custom', 'H:i:s');
+    $nbrSessions = $this->database->select('sessions')
+      ->countQuery()
+      ->execute()
+      ->FetchField();
     $build['content'] = [
-      '#markup' => $this->t('It is @date', ['@date' => $date, "@user" => $this->currentUser->getDisplayName()]),
-      '#cache' => ['max-age' => 0]
+      '#markup' => $this->t('There are @nbr of sessions', ['@nbr' => $nbrSessions])
     ];
     return $build;
   }

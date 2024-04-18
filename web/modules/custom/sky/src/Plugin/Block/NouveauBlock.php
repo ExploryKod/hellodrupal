@@ -77,7 +77,7 @@ final class NouveauBlock extends BlockBase implements ContainerFactoryPluginInte
     $date = $this->dateFormatter->format($now, 'custom', 'H:i:s');
     $build['content'] = [
       '#markup' => $this->t('It is @date', ['@date' => $date, "@user" => $this->currentUser->getDisplayName()]),
-      '#cache' => ['max-age' => 10]
+      '#cache' => ['max-age' => 0]
     ];
     return $build;
   }

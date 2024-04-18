@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Drupal\sky\Controller;
+namespace Drupal\sun\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
 /**
  * Returns responses for Sky routes.
  */
-final class SkyController extends ControllerBase {
+final class SunController extends ControllerBase {
 
   /**
    * Builds the response.
