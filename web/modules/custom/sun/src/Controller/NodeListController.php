@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\sky\Controller;
+namespace Drupal\sun\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 

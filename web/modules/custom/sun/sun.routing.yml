@@ -1,4 +1,4 @@
-sky.page:
+sun.page:
   path: '/sun/page'
   defaults:
     _title: 'Page'
@@ -6,11 +6,11 @@ sky.page:
   requirements:
     _permission: 'access content overview'
 
-sky.node_list:
-  path: '/sky/node-list/{node_type}'
+sun.node_list:
+  path: '/sun/node-list/{node_type}'
   defaults:
     _title: 'Node List'
-    _controller: '\Drupal\sky\Controller\NodeListController'
+    _controller: '\Drupal\sun\Controller\NodeListController'
     node_type: ''
   requirements:
     _permission: 'access content'

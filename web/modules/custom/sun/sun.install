@@ -48,3 +48,9 @@ function sun_install(): void {
 function sun_uninstall(): void {
   \Drupal::messenger()->addStatus(t('Module Sun has been uninstalled.'));
 }
+
+function sun_update_10001(): void {
+  $schema = \Drupal::database()->schema();
+  $fieldType = ['type' => 'int', 'size' => 'tiny', 'not null' => TRUE];
+  $schema->addField('sun_user_statistics', 'action', $fieldType);
+}

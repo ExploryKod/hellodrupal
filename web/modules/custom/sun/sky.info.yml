@@ -1,5 +1,0 @@
-name: 'sun'
-type: module
-description: 'sun est un ciel'
-package: sun
-core_version_requirement: ^10 || ^11
