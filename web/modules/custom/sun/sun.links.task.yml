@@ -1,0 +1,4 @@
+sun.stats:
+  title: 'Stats'
+  route_name: sun.stats
+  base_route: entity.user.canonical

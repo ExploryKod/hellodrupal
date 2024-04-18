@@ -29,6 +29,11 @@ function sun_schema() {
         'not null' => TRUE,
         'default' => 0,
       ],
+      'action' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+      ],
       // Ajoutez ici d'autres champs spécifiques à vos statistiques.
     ],
     'primary key' => ['id'],
@@ -53,4 +58,9 @@ function sun_update_10001(): void {
   $schema = \Drupal::database()->schema();
   $fieldType = ['type' => 'int', 'size' => 'tiny', 'not null' => TRUE];
   $schema->addField('sun_user_statistics', 'action', $fieldType);
+}
+
+
+function sun_user_login(\Drupal\user\UserInterface $account) {
+
 }

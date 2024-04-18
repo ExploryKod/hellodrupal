@@ -13,4 +13,20 @@ sun.node_list:
     _controller: '\Drupal\sun\Controller\NodeListController'
     node_type: ''
   requirements:
+    _access: 'TRUE'
+
+sun.stats:
+  path: '/user/{user}/stats'
+  defaults:
+    _title: 'Stats'
+    _controller: '\Drupal\sun\Controller\StatsController'
+  requirements:
+    _access: 'TRUE'
+
+sun.example:
+  path: '/sun/example'
+  defaults:
+    _title: 'Example'
+    _form: 'Drupal\sun\Form\ExampleForm'
+  requirements:
     _permission: 'access content'
