@@ -1,4 +1,0 @@
-services:
-  coi.form_alterations:
-    class: Drupal\coi\CoiFormAlterations
-    arguments: ['@config.factory', '@token']
