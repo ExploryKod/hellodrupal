@@ -65,3 +65,5 @@
 /drush
 /drupal.phar
 /drupal
+
+.ddev
