@@ -1,5 +1,6 @@
 .env
 .idea
+.ddev
 /vendor
 # gitignore template for Drupal 8 projects
 #
